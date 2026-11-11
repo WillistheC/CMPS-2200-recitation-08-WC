@@ -22,8 +22,7 @@ def reachable(graph, start_node):
     return result
 
 def connected(graph):
-    ### TODO
-    pass
+    return set(graph) == reachable(graph, set(graph).pop())
 
 def n_components(graph):
     """
