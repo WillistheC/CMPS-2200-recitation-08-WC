@@ -25,9 +25,11 @@ def connected(graph):
     return set(graph) == reachable(graph, set(graph).pop())
 
 def n_components(graph):
-    """
-    Returns:
-      the number of connected components in an undirected graph
-    """
-    ### TODO
-    pass
+    g = set(graph)
+    count = 0
+    while len(g) != 0:
+        count += 1
+        current = g.pop()
+        comp = reachable(graph, current)
+        g.difference_update(comp)
+    return count
