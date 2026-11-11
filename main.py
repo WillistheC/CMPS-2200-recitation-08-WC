@@ -16,8 +16,9 @@ def reachable(graph, start_node):
     result = set([start_node])
     frontier = set([start_node])
     while len(frontier) != 0:
-        ###TODO
-        break
+        current = frontier.pop()
+        frontier.update(graph[current].difference(result))
+        result.update(graph[current].difference(result))
     return result
 
 def connected(graph):
