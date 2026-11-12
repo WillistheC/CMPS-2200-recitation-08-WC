@@ -18,4 +18,9 @@ The way I have implemented `connected` calls `reachable` exactly once for best o
 
 - **5) (2 pts)** What is the work of `connected`, assuming $n$ nodes and $m$ edges?
 
+Since my implementation calls `reachable` once and does one comparison, $W(n,m) = O(n+m) + O(1) = O(n,m)$ (work of `reachable` plus the work from comparison)
+
 - **7) (1 pt)** What if we switched the graph representation to an adjacency matrix? Would the work of `reachable` change? If so, what would it be? If not, why not?
+
+The work would change to $O(n^{2})$ because you are scanning $n$ nodes $n$ neighbors in the worst case
+
